@@ -1,0 +1,9 @@
+---
+- name: Compliance Connection Test
+  hosts: web
+
+  tasks:
+  - name: Collect only kernel facts
+    ansible.builtin.shell: |
+      rpm -qa --last | grep kernel-`uname -r`
+    register: shell_output
