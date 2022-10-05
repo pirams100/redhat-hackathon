@@ -1,0 +1,4 @@
+[ssh_endpoints]
+mach1 ansible_host=#############
+mach2 ansible_host=#############
+mach3 ansible_host=#############
