@@ -1,5 +1,5 @@
 ---
-- name: Compliance Connection Test
+- name: CIG_Shell_output_split_test
   hosts: web
   gather_facts: no
 
