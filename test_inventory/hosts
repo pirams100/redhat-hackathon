@@ -1,0 +1,4 @@
+[endpoints]
+node1 ansible_host=3.139.98.126
+node2 ansible_host=3.139.83.134
+node3 ansible_host=3.144.99.173
