@@ -4,9 +4,19 @@
   gather_facts: no
 
   tasks:
-  - name: Collect only kernel facts
+  - name: Collect kernel version
     ansible.builtin.shell: |
-      rpm -qa --last | grep kernel-`uname -r`| sed 's/\s*|/|/g'
-    register: shell_output
+      rpm -qa --last | grep kernel-`uname -r`| awk '{print $1}'
+    register: shell_version_output
 
+  - name: Collect kernel date
+    ansible.builtin.shell: |
+      rpm -qa --last | grep kernel-`uname -r`| awk '{for (i=2; i<NF; i++) printf $i " "; print $NF}'
+    register: shell_date_output
+
+  - name: Outputing Data
+    debug:
+      msg: 
+      - "Kernel Version: {{shell_version_output}}"
+      - "Kernel Date:    {{shell_date_output}}"
     
