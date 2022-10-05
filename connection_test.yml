@@ -1,6 +1,6 @@
 ---
 - name: Compliance Connection Test
-  hosts: node1
+  hosts: localhost
 
   tasks:
   - name: Hello World
