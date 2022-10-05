@@ -6,5 +6,7 @@
   tasks:
   - name: Collect only kernel facts
     ansible.builtin.shell: |
-      rpm -qa --last | grep kernel-`uname -r`
+      rpm -qa --last | grep kernel-`uname -r`| sed 's/\s*|/|/g'
     register: shell_output
+
+    
