@@ -14,9 +14,9 @@
       rpm -qa --last | grep kernel-`uname -r`| awk '{for (i=2; i<NF; i++) printf $i " "; print $NF}'
     register: shell_date_output
 
-  - name: Outputing Data
-    debug:
-      msg: 
-      - "Kernel Version: {{shell_version_output}}"
-      - "Kernel Date:    {{shell_date_output}}"
+  # - name: Outputing Data
+  #   debug:
+  #     msg: 
+  #     - "Kernel Version: {{shell_version_output.stdout}}"
+  #     - "Kernel Date:    {{shell_date_output.stdout}}"
     
